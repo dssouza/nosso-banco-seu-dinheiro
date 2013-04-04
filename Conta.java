@@ -1,10 +1,10 @@
 class Conta {
-    String numero;
-    double saldo;
-    String cliente;
-    int numeroAgencia;
-    String tipoConta;
-    int limite;
+    private String numero;
+    private double saldo;
+    private String cliente;
+    private int numeroAgencia;
+    private String tipoConta;
+    private int limite;
     /**
      * @param saldoInicial
      *            Saldo Inicial da conta
@@ -63,4 +63,53 @@ class Conta {
         System.out.println(" SALDO  : R$" + saldo);
         System.out.println("-----------------------------\n");
     }
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
+	public int getNumeroAgencia() {
+		return numeroAgencia;
+	}
+
+	public void setNumeroAgencia(int numeroAgencia) {
+		this.numeroAgencia = numeroAgencia;
+	}
+
+	public String getTipoConta() {
+		return tipoConta;
+	}
+
+	public void setTipoConta(String tipoConta) {
+		this.tipoConta = tipoConta;
+	}
+
+	public int getLimite() {
+		return limite;
+	}
+
+	public void setLimite(int limite) {
+		this.limite = limite;
+	}
+    
 }
