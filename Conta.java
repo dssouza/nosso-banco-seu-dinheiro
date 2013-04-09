@@ -5,13 +5,14 @@ class Conta {
     private int numeroAgencia;
     private String tipoConta;
     private int limite;
+	private boolean ativa;
+    public static double impostoFinanceiro = 0.013d;
     
     public Conta(double saldoInicial, String numeroConta, String tit, int agencia, String tipoConta) {
     	this(numeroConta, tit, agencia, tipoConta);
     	this.saldo = saldoInicial;
 	}
-    
-
+ 
 	public Conta(String numero, String cliente, int numeroAgencia,
 			String tipoConta) {
 		this.numero = numero;
@@ -20,26 +21,6 @@ class Conta {
 		this.tipoConta = tipoConta;
 	}
 
-
-	/**
-     * @param saldoInicial
-     *            Saldo Inicial da conta
-     * @param num
-     *            Numero da conta
-     * @param tit
-     *            Titular da conta
-     * @param ag
-     *            Agencia a qual a conta pertence
-     * @param bc
-     *            Banco a qual a agencia pertence
-     */
-    /*public void inicializaConta(double saldoInicial, String numeroConta, String tit, int agencia) {
-        saldo = saldoInicial;
-        numero = numeroConta;
-        cliente = tit;
-        numeroAgencia = agencia;
-    }*/
-
     /**
      * @param valor
      *            Valor a ser sacado da conta
@@ -47,10 +28,14 @@ class Conta {
     public void saque(double valor) {
         System.out.println("Realizando saque de R$ " + valor + " da conta " + numero);
         if (valor > 0) {
+            
             if (saldo >= valor) {
                 saldo -= valor;
+                double valorImposto = valor*impostoFinanceiro;
+                saldo -= valorImposto;
+                System.out.println("Imposto recolhido da operação: " + valorImposto);
             } else
-                System.out.println("Saldo insuficiente");
+                Logger.logIt("Saldo insuficiente");
         } else {
             System.out.println("O valor de saque deve ser positivo");
         }
