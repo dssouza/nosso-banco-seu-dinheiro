@@ -3,6 +3,11 @@ class Agencia {
     private String nome;
     private int numeroBanco;
     
+	public Agencia(int numero, String nome, int numeroBanco) {
+		this.numero = numero;
+		this.nome = nome;
+		this.numeroBanco = numeroBanco;
+	}
 	public int getNumero() {
 		return numero;
 	}

@@ -7,6 +7,18 @@ class Cliente {
     private int numero;
     private String cidade;
     private String pais;
+    
+	public Cliente(int id, String nome, String email, String rg,
+			String logradouro, int numero, String cidade, String pais) {
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.rg = rg;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.cidade = cidade;
+		this.pais = pais;
+	}
 	public int getId() {
 		return id;
 	}

@@ -5,7 +5,23 @@ class Conta {
     private int numeroAgencia;
     private String tipoConta;
     private int limite;
-    /**
+    
+    public Conta(double saldoInicial, String numeroConta, String tit, int agencia, String tipoConta) {
+    	this(numeroConta, tit, agencia, tipoConta);
+    	this.saldo = saldoInicial;
+	}
+    
+
+	public Conta(String numero, String cliente, int numeroAgencia,
+			String tipoConta) {
+		this.numero = numero;
+		this.cliente = cliente;
+		this.numeroAgencia = numeroAgencia;
+		this.tipoConta = tipoConta;
+	}
+
+
+	/**
      * @param saldoInicial
      *            Saldo Inicial da conta
      * @param num
@@ -17,12 +33,12 @@ class Conta {
      * @param bc
      *            Banco a qual a agencia pertence
      */
-    public void inicializaConta(double saldoInicial, String numeroConta, String tit, int agencia) {
+    /*public void inicializaConta(double saldoInicial, String numeroConta, String tit, int agencia) {
         saldo = saldoInicial;
         numero = numeroConta;
         cliente = tit;
         numeroAgencia = agencia;
-    }
+    }*/
 
     /**
      * @param valor
