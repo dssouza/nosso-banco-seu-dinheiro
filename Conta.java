@@ -105,6 +105,14 @@ class Conta {
 		this.tipoConta = tipoConta;
 	}
 
+	public boolean isAtiva() {
+		return ativa;
+	}
+
+	public void setAtiva(boolean ativa) {
+		this.ativa = ativa;
+	}
+	
 	public int getLimite() {
 		return limite;
 	}
