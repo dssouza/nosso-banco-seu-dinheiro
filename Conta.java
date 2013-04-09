@@ -6,11 +6,22 @@ class Conta {
     private String tipoConta;
     private int limite;
 	private boolean ativa;
-    public static double impostoFinanceiro = 0.013d;
+    public static double impostoFinanceiro;
     
+	{
+        this.limite = 500;
+		System.out.println("[bloco ini instancia]");
+    }
+	
+	static {
+        Conta.impostoFinanceiro = 0.013d;
+		System.out.println("[bloco ini static]");
+    }
+	
     public Conta(double saldoInicial, String numeroConta, String tit, int agencia, String tipoConta) {
     	this(numeroConta, tit, agencia, tipoConta);
     	this.saldo = saldoInicial;
+		System.out.println("[construtor 5 parametros]");
 	}
  
 	public Conta(String numero, String cliente, int numeroAgencia,
@@ -19,6 +30,7 @@ class Conta {
 		this.cliente = cliente;
 		this.numeroAgencia = numeroAgencia;
 		this.tipoConta = tipoConta;
+		System.out.println("[construtor 4 parametros]");
 	}
 
     /**

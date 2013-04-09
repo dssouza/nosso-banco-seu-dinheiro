@@ -1,5 +1,6 @@
 class TesteBanco {
     public static void main(String ... args) {
+		Logger.logIt("[Iniciando método main...]");
         Banco banco = new Banco(231, "Souza");
 
         Agencia agencia = new Agencia(7174, "Calçada das Azaléias", 231);
@@ -23,11 +24,11 @@ class TesteBanco {
             
             clientes[i] = cliente;
         }
-        
+        Logger.logIt("Imprimindo Clientes...");
         for (Cliente cli:clientes) {
             System.out.println(cli.getNome() + " email : " + cli.getEmail());
         }        
-
+		Logger.logIt("Realizando operações...");
         double valorParaSacar = 10.0;
         System.out.println("Saldo Antes " + conta1.getSaldo());
         conta1.saque(20.0);
