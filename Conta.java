@@ -1,8 +1,8 @@
 class Conta {
     private String numero;
     private double saldo;
-    private String cliente;
-    private int numeroAgencia;
+    private Cliente cliente;
+    private Agencia agencia;
     private String tipoConta;
     private int limite;
 	private boolean ativa;
@@ -18,17 +18,17 @@ class Conta {
 		System.out.println("[bloco ini static]");
     }
 	
-    public Conta(double saldoInicial, String numeroConta, String tit, int agencia, String tipoConta) {
+    public Conta(double saldoInicial, String numeroConta, Cliente tit, Agencia agencia, String tipoConta) {
     	this(numeroConta, tit, agencia, tipoConta);
     	this.saldo = saldoInicial;
 		System.out.println("[construtor 5 parametros]");
 	}
  
-	public Conta(String numero, String cliente, int numeroAgencia,
+	public Conta(String numero, Cliente cliente, Agencia agencia,
 			String tipoConta) {
 		this.numero = numero;
 		this.cliente = cliente;
-		this.numeroAgencia = numeroAgencia;
+		this.agencia = agencia;
 		this.tipoConta = tipoConta;
 		System.out.println("[construtor 4 parametros]");
 	}
@@ -70,7 +70,7 @@ class Conta {
      */
     public void imprimeDados() {
         System.out.println("\n----------------------------");
-        System.out.println(" AGENCIA:" + numeroAgencia);
+        System.out.println(" AGENCIA:" + agencia.getNumero());
         System.out.println(" NUMERO : " + numero);
         System.out.println(" TITULAR: " + cliente);
         System.out.println(" SALDO  : R$" + saldo);
@@ -93,20 +93,20 @@ class Conta {
 		this.saldo = saldo;
 	}
 
-	public String getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
-	public int getNumeroAgencia() {
-		return numeroAgencia;
+	public Agencia getAgencia() {
+		return agencia;
 	}
 
-	public void setNumeroAgencia(int numeroAgencia) {
-		this.numeroAgencia = numeroAgencia;
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
 	}
 
 	public String getTipoConta() {

@@ -1,12 +1,12 @@
 class Agencia {
     private int numero;
     private String nome;
-    private int numeroBanco;
+    private Banco banco;
     
-	public Agencia(int numero, String nome, int numeroBanco) {
+	public Agencia(int numero, String nome, Banco banco) {
 		this.numero = numero;
 		this.nome = nome;
-		this.numeroBanco = numeroBanco;
+		this.banco = banco;
 	}
 	public int getNumero() {
 		return numero;
@@ -20,10 +20,11 @@ class Agencia {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getNumeroBanco() {
-		return numeroBanco;
+	public Banco getBanco() {
+		return banco;
 	}
-	public void setNumeroBanco(int numeroBanco) {
-		this.numeroBanco = numeroBanco;
+	public void setBanco(Banco banco) {
+		this.banco = banco;
 	}
+	
 }

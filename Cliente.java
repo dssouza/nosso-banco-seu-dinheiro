@@ -3,21 +3,14 @@ class Cliente {
     private String nome;
     private String email;
     private String rg;
-    private String logradouro;
-    private int numero;
-    private String cidade;
-    private String pais;
+    private Endereco endereco;
     
-	public Cliente(int id, String nome, String email, String rg,
-			String logradouro, int numero, String cidade, String pais) {
+	public Cliente(int id, String nome, String email, String rg, Endereco endereco) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.rg = rg;
-		this.logradouro = logradouro;
-		this.numero = numero;
-		this.cidade = cidade;
-		this.pais = pais;
+		this.endereco = endereco;
 	}
 	public int getId() {
 		return id;
@@ -43,29 +36,11 @@ class Cliente {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-	public String getLogradouro() {
-		return logradouro;
+	public Endereco getEndereco() {
+		return endereco;
 	}
-	public void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
-	public int getNumero() {
-		return numero;
-	}
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-	public String getCidade() {
-		return cidade;
-	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-	public String getPais() {
-		return pais;
-	}
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
-    
+	
 }
