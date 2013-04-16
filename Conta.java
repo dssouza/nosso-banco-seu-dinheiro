@@ -1,36 +1,24 @@
 class Conta {
-    private String numero;
-    private double saldo;
-    private Cliente cliente;
-    private Agencia agencia;
-    private String tipoConta;
-    private int limite;
-	private boolean ativa;
-    public static double impostoFinanceiro;
-    
-	{
-        this.limite = 500;
-		System.out.println("[bloco ini instancia]");
-    }
-	
-	static {
-        Conta.impostoFinanceiro = 0.013d;
-		System.out.println("[bloco ini static]");
-    }
-	
-    public Conta(double saldoInicial, String numeroConta, Cliente tit, Agencia agencia, String tipoConta) {
+    protected String numero;
+    protected double saldo;
+    protected Cliente cliente;
+    protected Agencia agencia;
+    protected TipoConta tipoConta;
+    protected boolean ativa;
+
+    public Conta(double saldoInicial, String numeroConta, Cliente tit, Agencia agencia, TipoConta tipoConta) {
     	this(numeroConta, tit, agencia, tipoConta);
     	this.saldo = saldoInicial;
-		System.out.println("[construtor 5 parametros]");
+		System.out.println("[construtor 5 parametros classe pai Conta ]");
 	}
  
 	public Conta(String numero, Cliente cliente, Agencia agencia,
-			String tipoConta) {
+			TipoConta tipoConta) {
 		this.numero = numero;
 		this.cliente = cliente;
 		this.agencia = agencia;
 		this.tipoConta = tipoConta;
-		System.out.println("[construtor 4 parametros]");
+		System.out.println("[construtor 4 parametros classe pai Conta]");
 	}
 
     /**
@@ -40,12 +28,8 @@ class Conta {
     public void saque(double valor) {
         System.out.println("Realizando saque de R$ " + valor + " da conta " + numero);
         if (valor > 0) {
-            
             if (saldo >= valor) {
                 saldo -= valor;
-                double valorImposto = valor*impostoFinanceiro;
-                saldo -= valorImposto;
-                System.out.println("Imposto recolhido da operação: " + valorImposto);
             } else
                 Logger.logIt("Saldo insuficiente");
         } else {
@@ -73,6 +57,7 @@ class Conta {
         System.out.println(" AGENCIA:" + agencia.getNumero());
         System.out.println(" NUMERO : " + numero);
         System.out.println(" TITULAR: " + cliente);
+        System.out.println(" TIPO DE PESSOA : " + tipoConta.getDescricao());
         System.out.println(" SALDO  : R$" + saldo);
         System.out.println("-----------------------------\n");
     }
@@ -109,11 +94,11 @@ class Conta {
 		this.agencia = agencia;
 	}
 
-	public String getTipoConta() {
+	public TipoConta getTipoConta() {
 		return tipoConta;
 	}
 
-	public void setTipoConta(String tipoConta) {
+	public void setTipoConta(TipoConta tipoConta) {
 		this.tipoConta = tipoConta;
 	}
 
@@ -125,12 +110,4 @@ class Conta {
 		this.ativa = ativa;
 	}
 	
-	public int getLimite() {
-		return limite;
-	}
-
-	public void setLimite(int limite) {
-		this.limite = limite;
-	}
-    
 }
