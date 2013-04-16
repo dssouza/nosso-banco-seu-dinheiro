@@ -6,6 +6,14 @@ class Conta {
     protected TipoConta tipoConta;
     protected boolean ativa;
 
+    
+    {
+    	System.out.println("[bloco ini instancia pai Conta]");
+    }
+    
+    static {
+    	System.out.println("[bloco ini static pai Conta]");
+    }
     public Conta(double saldoInicial, String numeroConta, Cliente tit, Agencia agencia, TipoConta tipoConta) {
     	this(numeroConta, tit, agencia, tipoConta);
     	this.saldo = saldoInicial;
@@ -56,7 +64,7 @@ class Conta {
         System.out.println("\n----------------------------");
         System.out.println(" AGENCIA:" + agencia.getNumero());
         System.out.println(" NUMERO : " + numero);
-        System.out.println(" TITULAR: " + cliente);
+        System.out.println(" TITULAR: " + cliente.getNome());
         System.out.println(" TIPO DE PESSOA : " + tipoConta.getDescricao());
         System.out.println(" SALDO  : R$" + saldo);
         System.out.println("-----------------------------\n");

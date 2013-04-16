@@ -23,7 +23,7 @@ public final class ContaCorrente extends Conta {
 	public ContaCorrente(String numero, Cliente cliente, Agencia agencia,
 			TipoConta tipoConta) {
 		super(numero, cliente, agencia, tipoConta);
-		System.out.println("[construtor 4 parametros classe pai ContaCorrente ]");
+		System.out.println("[construtor 4 parametros classe filha ContaCorrente ]");
 	}
 
 
